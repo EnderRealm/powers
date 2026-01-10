@@ -1,0 +1,19 @@
+{
+  "name": "beadpowers-dev",
+  "owner": {
+    "name": "Phil Price",
+    "email": "phil@pprice.me"
+  },
+  "plugins": [
+    {
+      "name": "beadpowers",
+      "source": "./",
+      "description": "Skills for bead based workflows",
+      "version": "0.1.0",
+      "author": {
+        "name": "Phil Price",
+        "email": "phil@pprice.me"
+      }
+    }
+  ]
+}

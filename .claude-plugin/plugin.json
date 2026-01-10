@@ -1,0 +1,17 @@
+{
+  "name": "beadpowers",
+  "description": "Skills for beads-powered workflows",
+  "version": "0.1.0",
+  "author": {
+    "name": "Phil Price",
+    "email": "phil@pprice.me"
+  },
+  "homepage": "https://github.com/philprice/beadpowers",
+  "repository": "https://github.com/philprice/beadpowers",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "beads",
+    "brainstorming"
+  ]
+}
