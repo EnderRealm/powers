@@ -8,7 +8,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
 PLUGIN_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
 # Read content
-content=$(cat "${PLUGIN_ROOT}/skills/using-beadpowers/SKILL.md" 2>&1 || echo "Error reading using-beadpowers skill")
+content=$(cat "${PLUGIN_ROOT}/skills/using-powers/SKILL.md" 2>&1 || echo "Error reading using-powers skill")
 
 # Escape outputs for JSON using pure bash
 escape_for_json() {
@@ -36,7 +36,7 @@ cat <<EOF
 {
   "hookSpecificOutput": {
     "hookEventName": "SessionStart",
-    "additionalContext": "<EXTREMELY_IMPORTANT>\nYou have bead powers.\n\n**Below is the full content of your 'beadpowers:using-beadpowers' skill - your introduction to using skills. For all other skills, use the 'Skill' tool:**\n\n${content_escaped}\n</EXTREMELY_IMPORTANT>"
+    "additionalContext": "Powers plugin loaded. Available skills: powers:brainstorming, powers:create-tickets. Run /brainstorm to start a design session.\n\n${content_escaped}"
   }
 }
 EOF

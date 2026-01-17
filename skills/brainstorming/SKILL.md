@@ -1,55 +1,45 @@
 ---
 name: brainstorming
-description: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
+description: Socratic design refinement before implementation. Use before building features, adding functionality, or modifying behavior.
 ---
 
 # Brainstorming Ideas Into Designs
 
-## Overview
-
-Help turn ideas into fully formed designs and specs through natural collaborative dialogue.
-
-Start by understanding the current project context, then ask questions one at a time to refine the idea. Once you understand what you're building, present the design in small sections (200-300 words), checking after each section whether it looks right so far.
+Collaborative dialogue to turn ideas into fully formed designs.
 
 ## Prerequisites
 
-**REQUIRED:** Verify beads is installed. If `bd` command not available, **STOP** and tell user to install beads.
+Verify `tk` is installed. If unavailable, stop and tell the user to install it.
 
-## The Process
+## Process
 
 **Understanding the idea:**
-- Check out the current project state first (files, docs, recent commits)
-- Check active beads: `bd list` for open tasks, `bd list --type epic` for epics
+- Review current project state (files, docs, recent commits)
+- Check active tickets: `tk ls` for open tasks, `tk ls -T epic` for epics
 - Ask questions one at a time to refine the idea
-- Prefer multiple choice questions when possible, but open-ended is fine too
-- Only one question per message - if a topic needs more exploration, break it into multiple questions
-- Focus on understanding: purpose, constraints, success criteria
+- Prefer multiple choice when possible
+- Focus on: purpose, constraints, success criteria
 
 **Exploring approaches:**
-- Propose 2-3 different approaches with trade-offs
-- Present options conversationally with your recommendation and reasoning
-- Lead with your recommended option and explain why
+- Propose 2-3 approaches with trade-offs
+- Lead with your recommendation and reasoning
 
 **Presenting the design:**
-- Once you believe you understand what you're building, present the design
-- Break it into sections of 200-300 words
-- Ask after each section whether it looks right so far
+- Break into sections of 200-300 words
+- Ask after each section whether it looks right
 - Cover: architecture, components, data flow, error handling, testing
-- Be ready to go back and clarify if something doesn't make sense
+- Go back and clarify if something doesn't make sense
 
 ## After the Design
 
-**DO NOT write design documents to `docs/plans/`** - use beads instead.
-
 **Implementation (if continuing):**
 - Ask: "Ready to set up for implementation?"
-- Use beadpowers:create-beads to create epic/tasks with the design
+- Use `powers:create-tickets` to create epic/tasks with the design
 
-## Key Principles
+## Principles
 
-- **One question at a time** - Don't overwhelm with multiple questions
-- **Multiple choice preferred** - Easier to answer than open-ended when possible
-- **YAGNI ruthlessly** - Remove unnecessary features from all designs
-- **Explore alternatives** - Always propose 2-3 approaches before settling
-- **Incremental validation** - Present design in sections, validate each
-- **Be flexible** - Go back and clarify when something doesn't make sense
+- One question at a time
+- Multiple choice preferred
+- YAGNI ruthlessly
+- Explore alternatives before settling
+- Incremental validation

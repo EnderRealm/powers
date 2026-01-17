@@ -1,18 +1,16 @@
 {
-  "name": "beadpowers-dev",
+  "name": "powers-dev",
   "owner": {
-    "name": "Phil Price",
-    "email": "phil@pprice.me"
+    "name": "Steve MacBeth"
   },
   "plugins": [
     {
-      "name": "beadpowers",
+      "name": "powers",
       "source": "./",
-      "description": "Skills for bead based workflows",
+      "description": "Skills for ticket-based workflows",
       "version": "0.1.0",
       "author": {
-        "name": "Phil Price",
-        "email": "phil@pprice.me"
+        "name": "Steve MacBeth"
       }
     }
   ]

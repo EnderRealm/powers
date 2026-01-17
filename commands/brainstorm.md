@@ -1,6 +1,6 @@
 ---
-description: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores requirements and design before implementation."
+description: Start a brainstorming session to refine ideas into designs
 disable-model-invocation: true
 ---
 
-Invoke the beadpowers:brainstorming skill and follow it exactly as presented to you
+Invoke the powers:brainstorming skill and follow it exactly as presented to you

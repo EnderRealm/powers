@@ -1,35 +1,37 @@
-# Beadpowers
-Claude Code skills for [Beads](https://github.com/steveyegge/beads) based workflows. Largely inspired by [Superpowers](https://github.com/obra/superpowers) with beads specific modifications. 
+# Powers
 
-## Why?
-Superpowers is great but will generate markdown files within `docs/plans` without explicit instruction not to (and sometimes still does). With beads, work can be tracked within beads structued "memory", this plugin specializes (some) of the superpower skills for beads.
+Claude Code skills for [ticket](https://github.com/wedow/ticket/) based workflows.
 
 ## Install
-### Claude Code
-In Claude Code, register the marketplace first:
 
-```/plugin marketplace add pprice/beadpowers```
+In Claude Code:
 
-Then install the plugin from this marketplace:
+```
+/plugin marketplace add powers file://./.claude-plugin/marketplace.json
+/plugin install powers@powers
+```
 
-```/plugin install beadpowers@beadpowers```
-
-### Verify
-After restarting `claude` you should see `/beadpowers:brainstorm` in `/skills`
+After restarting `claude` you should see `/brainstorm` in `/skills`.
 
 ## Commands
- 
- - `beadpowers:brainstorm` - Like `superpowers:brainstorm` but beads epics and tasks are generated instead of plan files.
+
+- `/brainstorm` - Start a Socratic design session
+- `/tk-ready` - Show tickets ready to work on
+- `/tk-list` - List tickets with optional filters
+- `/tk-ticket` - Create a single ticket
+- `/tk-tickets` - Create structured tickets from a design
 
 ## Skills
 
- - `brainstorming` - Socratic design refinement
- - `create-beads` - Invoked after brain storming to create epics and tasks.
+- `powers:brainstorming` - Socratic design refinement before implementation
+- `powers:create-tickets` - Convert designs into tk epics and tasks
 
 ## Updating
-Skills update automatically when you update the plugin:
 
-```/plugin update beadpowers```
+```
+/plugin update powers
+```
 
-## Licence
-MIT License - see LICENSE file for details.
+## License
+
+MIT
