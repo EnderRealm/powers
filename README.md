@@ -4,14 +4,18 @@ Claude Code skills for [ticket](https://github.com/wedow/ticket/) based workflow
 
 ## Install
 
-In Claude Code:
-
 ```
-/plugin marketplace add powers file://./.claude-plugin/marketplace.json
-/plugin install powers@powers
+/plugin install gh:EnderRealm/powers
 ```
 
 After restarting `claude` you should see `/brainstorm` in `/skills`.
+
+### Local Development
+
+```
+/plugin marketplace add powers-dev file://./.claude-plugin/marketplace.json
+/plugin install powers-dev@powers
+```
 
 ## Commands
 
