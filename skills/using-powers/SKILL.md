@@ -1,33 +1,50 @@
 ---
 name: using-powers
 description: Establishes skill usage patterns at session start
+user-invocable: false
 ---
 
-# Powers Skills
+# Powers Plugin
 
-This plugin provides skills for structured design and task management workflows.
+Structured development workflows using tk tickets.
 
-## Available Skills
+## Development Workflow
 
-- `powers:brainstorming` - Socratic design refinement before implementation
-- `powers:create-tickets` - Convert designs into tk epics and tasks
+**Start new work:**
+- `/create-feature` — Full feature workflow (brainstorm → plan → execute → test → commit → push)
+- `/create-bug` — Lean bug workflow (investigate → fix → test → commit → push)
 
-## Available Commands
+**Resume existing work:**
+- `/work-ticket <id>` — Resume work on a ticket based on its type and state
 
-- `/brainstorm` - Start a brainstorming session
-- `/tk-ready` - Show tickets ready to work on
-- `/tk-list` - List tickets with optional filters
-- `/tk-ticket` - Create a single ticket
-- `/tk-tickets` - Create structured tickets from a design
+**One ticket = one commit = one push.** Each workflow ends with a committed, pushed change.
 
-## When to Invoke
+## Ticket Management
 
-Check skills before starting implementation work:
+- `/tk-list` — List tickets with optional filters
+- `/tk-ready` — Show tickets ready to work on (no blockers)
+- `/tk-ticket` — Create a single ticket manually
 
-- Building a feature → `powers:brainstorming` first, then `powers:create-tickets`
-- Adding functionality → `powers:brainstorming` to clarify requirements
-- Have a design, need tasks → `powers:create-tickets`
+## Design & Planning
 
-## Access
+- `/brainstorm` — Socratic design refinement before implementation
+- `powers:create-tickets` — Convert designs into tk epics and tasks
 
-Use the `Skill` tool with `powers:` prefix. Follow skill instructions directly.
+## When to Use What
+
+| Situation | Action |
+|-----------|--------|
+| New feature to build | `/create-feature` |
+| Bug to fix | `/create-bug` |
+| Resuming from yesterday | `/work-ticket <id>` |
+| Need to think through approach | `/brainstorm` |
+| Have design, need task breakdown | `powers:create-tickets` |
+| Quick ticket lookup | `/tk-list` or `/tk-ready` |
+
+## Workflow Principles
+
+- **Phases always run**, scaled to task size
+- **Ask on decisions, not confirmations** — proceed unless blocked
+- **Document decisions** with `**Decision:**` and `(auto)` or `(human)` tags
+- **Capture learnings** in `## Learnings` section
+- **Never hack around blockers** — stop and surface issues
