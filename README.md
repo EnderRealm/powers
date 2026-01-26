@@ -1,6 +1,6 @@
 # Powers
 
-Structured development workflows for Claude Code using [tk](https://github.com/wedow/ticket/) tickets.
+Structured development workflows for Claude Code using [tk](https://github.com/EnderRealm/ticket/) tickets.
 
 **One ticket = one commit = one push.** Each workflow guides you from idea to shipped code.
 
@@ -23,7 +23,7 @@ Set up the complete powers workflow on a new machine:
 
 ### 1. Prerequisites
 
-Install [tk](https://github.com/wedow/ticket/):
+Install [tk](https://github.com/EnderRealm/ticket/):
 ```bash
 # Follow tk installation instructions
 ```
@@ -95,6 +95,21 @@ Restart Claude Code. You should see the workflow commands in `/skills`.
 - **Document decisions** with `**Decision:**` and `(auto)` or `(human)` tags
 - **Capture learnings** in `## Learnings` section for later mining
 - **Never hack around blockers** — stop and surface issues
+
+## Testing Handoff
+
+Workflows end by setting tickets to `needs_testing` status, not `closed`. This signals that:
+
+1. The agent has completed implementation
+2. Code is committed and pushed
+3. Human (or agent) testing is required before closure
+
+To close a ticket after verification:
+```bash
+tk edit <ticket-id> --status closed
+```
+
+Use `tk ls --status=needs_testing` to see tickets awaiting verification.
 
 ## Project Structure
 
