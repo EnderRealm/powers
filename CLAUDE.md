@@ -12,22 +12,16 @@ Powers is a Claude Code plugin providing skills for ticket-based workflows using
 .claude-plugin/
   plugin.json           # Plugin metadata
   marketplace.json      # Local dev marketplace config
-commands/
-  brainstorm.md         # Delegates to brainstorming skill
-  create-feature.md     # Start feature workflow
-  create-bug.md         # Start bug workflow
-  work-ticket.md        # Resume work on existing ticket
-  tk-ready.md           # Wraps tk ready
-  tk-list.md            # Wraps tk ls
-  tk-ticket.md          # Wraps tk create (single ticket)
-  tk-tickets.md         # Delegates to create-tickets skill
 skills/
-  brainstorming/        # Socratic design refinement
-  create-feature/       # Feature workflow (brainstorm → plan → execute → test → commit)
-  create-bug/           # Bug workflow (investigate → fix → test → commit)
-  work-ticket/          # Resume based on ticket type and state
+  brainstorming/        # /brainstorm - Socratic design refinement
+  create-feature/       # /create-feature - Feature workflow
+  create-bug/           # /create-bug - Bug workflow
+  work-ticket/          # /work-ticket - Resume based on ticket type
   create-tickets/       # Convert designs to tk epics/tasks
   using-powers/         # Meta-skill injected at session start
+  tk-list/              # /tk-list - List tickets with filters
+  tk-ready/             # /tk-ready - Show ready tickets
+  tk-ticket/            # /tk-ticket - Create single ticket
 docs/
   TICKET-CONVENTIONS.md # Ticket structure patterns
 templates/
@@ -37,6 +31,8 @@ hooks/
   session-start.sh      # Injects using-powers into session context
   run-hook.cmd          # Cross-platform hook runner
 ```
+
+**Skills are slash commands.** Each `skills/<name>/SKILL.md` creates a `/name` command. The `name` field in frontmatter becomes the command name.
 
 **Skill loading:** SessionStart hook reads `using-powers/SKILL.md` and injects as context.
 
