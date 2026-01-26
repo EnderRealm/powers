@@ -172,10 +172,10 @@ git commit -m "[<ticket-id>] <imperative description>"
 - All files changed for this feature
 - Updated ticket file from `.tickets/`
 
-## Phase 8: Push & Close
+## Phase 8: Push
 
 ```bash
-tk edit <ticket-id> --status closed
+tk edit <ticket-id> --status needs_testing
 git add .tickets/<ticket-id>.md
 git commit --amend --no-edit
 git push

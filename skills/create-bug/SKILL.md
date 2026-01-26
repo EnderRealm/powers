@@ -128,10 +128,10 @@ git commit -m "[<ticket-id>] Fix <concise description>"
 - All files changed for this fix
 - Updated ticket file from `.tickets/`
 
-## Phase 7: Push & Close
+## Phase 7: Push
 
 ```bash
-tk edit <ticket-id> --status closed
+tk edit <ticket-id> --status needs_testing
 git add .tickets/<ticket-id>.md
 git commit --amend --no-edit
 git push
