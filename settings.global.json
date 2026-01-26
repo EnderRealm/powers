@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(powers:tk-ready)",
+      "Bash(tk *)",
+
+      "Bash(done)",
+      "Bash(chmod:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+
+      "Bash(bun run typecheck:*)",
+      "Bash(bunx tsc:*)",
+      "Bash(bunx vite build:*)",
+
+      "Bash(npm run:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx vite:*)",
+
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git diff:*)"
+     ],
+     "deny": [
+      "Read(./.env)"
+     ]
+  },
+  "enabledPlugins": {
+    "powers@powers-dev": true
+  }
+}
