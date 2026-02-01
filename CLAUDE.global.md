@@ -119,10 +119,13 @@ Example: `[p-1234] Add session refresh logic`
 
 ## 6. Task Management
 
-- We use `tk` CLI for ticket management. Run `tk help` when you need it.
+- `tk` is a CLI on PATH. Invoke directly as `tk <command>`.
+- Run `tk help` before first use in a session to see available commands and syntax.
+- Never guess alternative invocations — no `python -m`, no module paths, no wrappers.
+- Never work around the CLI — don't `ls .tickets/`, don't parse ticket files directly.
+- When a command fails, re-read `tk help` and fix your invocation. Don't improvise.
 - Commit format: `[ticket-id] description`
 - When committing, include any new tickets created in `.tickets/` directory.
-- Reference ticket conventions in `docs/TICKET-CONVENTIONS.md` (if present in project).
 
 ---
 

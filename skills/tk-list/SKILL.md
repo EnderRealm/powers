@@ -8,9 +8,11 @@ Run `tk ls` with any filters provided by the user.
 ## Common Filters
 
 - `--status=open` or `--status=closed` or `--status=in_progress`
-- `--priority=0` through `--priority=4`
+- `-t, --type=<type>` to filter by type (bug, feature, task, epic, chore)
+- `-P, --priority=<0-4>` to filter by priority
 - `--parent=<epic-id>` to list child tickets
-- `-T, --type=<type>` to filter by type (bug, feature, task, epic, chore)
+- `-a, --assignee=<name>` to filter by assignee
+- `-T, --tag=<tag>` to filter by tag
 
 ## Priority Levels
 
@@ -26,5 +28,6 @@ Run `tk ls` with any filters provided by the user.
 tk ls                          # All open tickets
 tk ls --status=closed          # Closed tickets
 tk ls --parent=p-1234          # Children of epic
-tk ls -T bug                   # All bugs
+tk ls -t bug                   # All bugs
+tk ls -t feature -P 1          # High-priority features
 ```
