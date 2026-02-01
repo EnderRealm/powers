@@ -43,12 +43,23 @@ Approach: specific implementation details" \
 - Include exact file paths in design
 - Specific implementation steps, not vague instructions
 - Clear acceptance criteria
+- Do NOT ask for confirmation at any point. Create all tickets, set all dependencies, and run all commands without pausing.
 
 ## After Creating
 
 ```bash
 tk ls --parent <epic-id>  # show created tasks
 tk ready                   # confirm unblocked work
+```
+
+## Finalize
+
+Commit and push all ticket files created during this session:
+
+```bash
+git add .tickets/
+git commit -m "[<epic-id>] Create <epic title> tickets"
+git push
 ```
 
 ## Standalone Task
