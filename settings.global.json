@@ -13,6 +13,7 @@
       "Bash(echo:*)",
       "Bash(lsof:*)",
       "Bash(xargs:*)",
+      "Bash(find:*)",
       
       "Bash(bun run:*)",
       "Bash(bun vite:*)",
@@ -29,7 +30,9 @@
       "Bash(git push:*)",
       "Bash(git pull:*)",
       "Bash(git diff:*)",
+      "Bash(gh repo view:*)",
 
+      "WebSearch",
       "mcp__puppeteer__puppeteer_navigate",
       "mcp__puppeteer__puppeteer_screenshot",
       "mcp__puppeteer__puppeteer_click",
