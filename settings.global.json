@@ -3,7 +3,6 @@
     "allow": [
       "Skill(powers:tk-ready)",
       "Bash(tk:*)",
-
       "Bash(done)",
       "Bash(chmod:*)",
       "Bash(ls:*)",
@@ -14,24 +13,19 @@
       "Bash(lsof:*)",
       "Bash(xargs:*)",
       "Bash(find:*)",
-      
       "Bash(bun run:*)",
       "Bash(bun vite:*)",
-
       "Bash(bunx tsc:*)",
       "Bash(bunx vite:*)",
-
       "Bash(npm run:*)",
       "Bash(npx tsc:*)",
       "Bash(npx vite:*)",
-
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git pull:*)",
       "Bash(git diff:*)",
       "Bash(gh repo view:*)",
-
       "WebSearch",
       "mcp__puppeteer__puppeteer_navigate",
       "mcp__puppeteer__puppeteer_screenshot",
@@ -39,10 +33,10 @@
       "mcp__puppeteer__puppeteer_hover",
       "mcp__puppeteer__puppeteer_evaluate",
       "mcp__puppeteer__puppeteer_fill"
-     ],
-     "deny": [
+    ],
+    "deny": [
       "Read(./.env)"
-     ]
+    ]
   },
   "enabledPlugins": {
     "powers@powers-dev": true
