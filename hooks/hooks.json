@@ -21,6 +21,17 @@
           }
         ]
       }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks/extract-session-summary.sh\"",
+            "timeout": 30
+          }
+        ]
+      }
     ]
   }
 }
