@@ -111,6 +111,22 @@ tk edit <ticket-id> --status closed
 
 Use `tk ls --status=needs_testing` to see tickets awaiting verification.
 
+## Learning Extraction
+
+Powers includes hooks that capture session knowledge before it's lost to context compaction or session end.
+
+**PreCompact hook** — Prompts Claude to produce a structured session summary (tickets, decisions, problems, discoveries, incomplete work) while it still has full context.
+
+**SessionEnd hook** — Extracts the summary from the session transcript and pushes it to the [learnings](https://github.com/EnderRealm/learnings) repo.
+
+Summaries are processed nightly by the [Manager](https://github.com/EnderRealm/manager) repo's extraction pipeline:
+1. Catch-up: summarize any missed sessions
+2. Extract: create tickets from unresolved problems, discoveries, incomplete work
+3. Detect patterns: identify recurring themes across sessions and projects
+4. Generate rollups: daily, weekly, monthly, annual summaries
+
+See `docs/LEARNING-EXTRACTION-DESIGN.md` for the full system design.
+
 ## Project Structure
 
 ```
@@ -124,8 +140,14 @@ skills/
   tk-list/            # Ticket listing
   tk-ready/           # Ready tickets
   tk-ticket/          # Single ticket creation
+hooks/
+  hooks.json          # Hook registration (SessionStart, PreCompact, SessionEnd)
+  session-start.sh    # Injects using-powers context
+  extract-session-summary.sh  # Extracts summaries to learnings repo
+  run-hook.cmd        # Cross-platform hook runner
 docs/
-  TICKET-CONVENTIONS.md   # Ticket structure patterns
+  TICKET-CONVENTIONS.md          # Ticket structure patterns
+  LEARNING-EXTRACTION-DESIGN.md  # Learning extraction system design
 templates/
   PROJECT.md          # Project config template
 CLAUDE.global.md      # Global agent instructions

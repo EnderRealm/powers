@@ -1,6 +1,6 @@
 ---
 id: p-2f2f
-status: in_progress
+status: closed
 deps: []
 links: []
 created: 2026-02-08T20:05:34Z
