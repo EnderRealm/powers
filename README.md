@@ -125,6 +125,32 @@ Summaries are processed nightly by the [Manager](https://github.com/EnderRealm/m
 3. Detect patterns: identify recurring themes across sessions and projects
 4. Generate rollups: daily, weekly, monthly, annual summaries
 
+### Nightly Pipeline Setup
+
+The nightly job runs from the [Manager](https://github.com/EnderRealm/manager) repo. Requires Bash 5+ (`brew install bash`).
+
+**Run manually:**
+```bash
+~/code/manager/scripts/nightly-pipeline.sh
+```
+
+**Install as launchd job (runs daily at 2am):**
+```bash
+cp ~/code/manager/scripts/com.smacbeth.learnings-nightly.plist ~/Library/LaunchAgents/
+launchctl load ~/Library/LaunchAgents/com.smacbeth.learnings-nightly.plist
+```
+
+**Check logs:**
+```bash
+tail -f ~/code/manager/logs/nightly-pipeline.log
+```
+
+**Uninstall:**
+```bash
+launchctl unload ~/Library/LaunchAgents/com.smacbeth.learnings-nightly.plist
+rm ~/Library/LaunchAgents/com.smacbeth.learnings-nightly.plist
+```
+
 See `docs/LEARNING-EXTRACTION-DESIGN.md` for the full system design.
 
 ## Project Structure
