@@ -52,6 +52,16 @@ branch="$(cd "$cwd" 2>/dev/null && git rev-parse --abbrev-ref HEAD 2>/dev/null |
 # Parse ticket IDs from body (p-XXXX pattern)
 tickets="$(echo "$summary_body" | grep -oE 'p-[0-9a-f]{4}' | sort -u | jq -R . | jq -sc .)"
 
+# Extract quantitative metrics from transcript
+message_count="$(jq -c 'select(.type == "user" or .type == "assistant")' "$transcript_path" 2>/dev/null | wc -l | tr -d ' ')"
+tool_uses="$(jq -c 'select(.type == "assistant") | .message.content[]? | select(.type == "tool_use")' "$transcript_path" 2>/dev/null | wc -l | tr -d ' ')"
+files_touched="$(jq -r '
+  select(.type == "assistant") | .message.content[]? |
+  select(.type == "tool_use") |
+  select(.name == "Edit" or .name == "Write" or .name == "Read") |
+  .input.file_path // .input.path // empty
+' "$transcript_path" 2>/dev/null | sort -u | wc -l | tr -d ' ')"
+
 # Build output path
 session_dir="$LEARNINGS_REPO/sessions/$project"
 mkdir -p "$session_dir"
@@ -65,6 +75,9 @@ session_id: $session_id
 date: $today
 branch: $branch
 tickets: $tickets
+message_count: $message_count
+tool_uses: $tool_uses
+files_touched: $files_touched
 processed: false
 ---
 

@@ -123,18 +123,27 @@ Example: `[p-1234] Add session refresh logic`
 - Run `tk help` before first use in a session to see available commands and syntax.
 - Never guess alternative invocations — no `python -m`, no module paths, no wrappers.
 - Never work around the CLI — don't `ls .tickets/`, don't parse ticket files directly.
+- **Never directly edit ticket markdown files.** Always use `tk create`, `tk edit`, `tk add-note`, etc.
 - When a command fails, re-read `tk help` and fix your invocation. Don't improvise.
 - Commit format: `[ticket-id] description`
 - When committing, include any new tickets created in `.tickets/` directory.
 
 ---
 
-## 7. Code Architecture
+## 7. Tech Stack
+
+- Primary: TypeScript (frontend + backend), Python, Shell scripts.
+- JS runtime/package manager: bun.
+- Frontend dev server: vite.
+
+---
+
+## 8. Code Architecture
 
 - ALWAYS create a mechanism for debugging. Often this means logging to a file to enable agentic debugging. If unsure how to achieve this, ask Steve.
 
 ---
 
-## 8. Final Acknowledgment
+## 9. Final Acknowledgment
 
 By outputting code, Claude acknowledges that it has read, understood, and will strictly abide by this contract.

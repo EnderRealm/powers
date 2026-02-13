@@ -91,11 +91,22 @@ Use feature flow phases as guidance, but adapt as needed:
 - Chores may not need testing
 - Use judgment, document decisions
 
-## Step 5: Continue Through Remaining Phases
+## Step 5: Validate Before Presenting Results
+
+Before marking any phase as complete or presenting work to the user:
+
+1. **Run tests** if a test suite exists (`bun test`, `npm test`, `pytest`, etc.)
+2. **Run type checks** if TypeScript (`bun tsc --noEmit`)
+3. **Run linter** if configured (`bun lint`, `npm run lint`, etc.)
+
+If any check fails, fix the issues before proceeding. Do not present work as done until validation passes. If a check cannot be fixed after reasonable effort, document the failure and surface it.
+
+## Step 6: Continue Through Remaining Phases
 
 After resuming, continue through all remaining phases until complete:
 - Execute remaining phases in order
 - Update ticket at each checkpoint
+- Validate at each phase boundary
 - Commit and push when done
 
 ---
