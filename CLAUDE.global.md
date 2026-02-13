@@ -118,7 +118,6 @@ Example: `[p-1234] Add session refresh logic`
 ---
 
 ## 6. Task Management
-
 - `tk` is a CLI on PATH. Invoke directly as `tk <command>`.
 - Run `tk help` before first use in a session to see available commands and syntax.
 - Never guess alternative invocations — no `python -m`, no module paths, no wrappers.
