@@ -62,6 +62,12 @@ files_touched="$(jq -r '
   .input.file_path // .input.path // empty
 ' "$transcript_path" 2>/dev/null | sort -u | wc -l | tr -d ' ')"
 
+# Extract token usage from assistant message usage fields
+input_tokens="$(jq -s '[.[] | select(.type == "assistant") | .message.usage.input_tokens // 0] | add // 0' "$transcript_path" 2>/dev/null || echo "0")"
+output_tokens="$(jq -s '[.[] | select(.type == "assistant") | .message.usage.output_tokens // 0] | add // 0' "$transcript_path" 2>/dev/null || echo "0")"
+cache_read_tokens="$(jq -s '[.[] | select(.type == "assistant") | .message.usage.cache_read_input_tokens // 0] | add // 0' "$transcript_path" 2>/dev/null || echo "0")"
+cache_creation_tokens="$(jq -s '[.[] | select(.type == "assistant") | .message.usage.cache_creation_input_tokens // 0] | add // 0' "$transcript_path" 2>/dev/null || echo "0")"
+
 # Build output path
 session_dir="$LEARNINGS_REPO/sessions/$project"
 mkdir -p "$session_dir"
@@ -78,6 +84,10 @@ tickets: $tickets
 message_count: $message_count
 tool_uses: $tool_uses
 files_touched: $files_touched
+input_tokens: $input_tokens
+output_tokens: $output_tokens
+cache_read_tokens: $cache_read_tokens
+cache_creation_tokens: $cache_creation_tokens
 processed: false
 ---
 
