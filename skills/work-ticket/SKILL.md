@@ -1,7 +1,6 @@
 ---
 name: work-ticket
 description: Resume work on an existing ticket based on its type and current state.
-disable-model-invocation: true
 argument-hint: <ticket-id> [--auto]
 ---
 

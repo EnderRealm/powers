@@ -1,7 +1,6 @@
 ---
 name: create-bug
 description: Start a bug fix with lean workflow. Investigate → fix → test → commit → push.
-disable-model-invocation: true
 ---
 
 # Bug Workflow

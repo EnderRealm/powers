@@ -1,7 +1,6 @@
 ---
 name: create-feature
 description: Start a new feature with structured workflow. Brainstorm → plan → execute → test → commit → push.
-disable-model-invocation: true
 ---
 
 # Feature Workflow

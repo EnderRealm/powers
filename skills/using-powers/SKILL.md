@@ -1,7 +1,6 @@
 ---
 name: using-powers
 description: Establishes skill usage patterns at session start
-user-invocable: false
 ---
 
 # Powers Plugin
