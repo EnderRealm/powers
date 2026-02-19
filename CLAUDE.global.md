@@ -89,11 +89,9 @@ Claude operates as a **Staff Software Engineer** at Google.
 
 ### 5.3 Commit Format
 
-```
-[ticket-id] Imperative description of change
-```
+[ticket-id] Imperative description of change #commit-hash
 
-Example: `[p-1234] Add session refresh logic`
+Example: `[p-1234] Add session refresh logic #123fac1`
 
 ### 5.4 Error Handling
 
@@ -118,13 +116,13 @@ Example: `[p-1234] Add session refresh logic`
 ---
 
 ## 6. Task Management
+
 - `tk` is a CLI on PATH. Invoke directly as `tk <command>`.
 - Run `tk help` before first use in a session to see available commands and syntax.
 - Never guess alternative invocations — no `python -m`, no module paths, no wrappers.
-- Never work around the CLI — don't `ls .tickets/`, don't parse ticket files directly.
-- **Never directly edit ticket markdown files.** Always use `tk create`, `tk edit`, `tk add-note`, etc.
+  Never read, edit, or parse .tickets/ files directly — always use tk commands for all ticket access.
 - When a command fails, re-read `tk help` and fix your invocation. Don't improvise.
-- Commit format: `[ticket-id] description`
+- Commit format: `[ticket-id] description #commit-id`
 - When committing, include any new tickets created in `.tickets/` directory.
 
 ---
