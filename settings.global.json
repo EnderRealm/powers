@@ -8,6 +8,7 @@
       "Bash(python *)",
       "Bash(python3 *)",
       "Bash(pip *)",
+      "Base(.venv/bin/pip *)",
       "Bash(pip3 *)",
       "Bash(sqlite3 *)",
       "Bash(curl *)",
@@ -40,12 +41,14 @@
       "mcp__puppeteer__puppeteer_evaluate",
       "mcp__puppeteer__puppeteer_fill"
     ],
-    "deny": [
-      "Read(./.env)",
+    "ask": [
       "Bash(rm *)",
-      "Bash(rmdir *)",
       "Bash(kill *)",
       "Bash(pkill *)",
+      "Bash(rmdir *)"      
+    ],
+    "deny": [
+      "Read(./.env)",
       "Bash(killall *)",
       "Bash(dd *)",
       "Bash(mkfs *)"
