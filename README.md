@@ -84,11 +84,23 @@ Restart Claude Code. You should see the workflow commands in `/skills`.
 | `/tk-ready` | Show tickets ready to work on (no blockers) |
 | `/tk-ticket` | Create a single ticket manually |
 
+### Debugging
+
+| Command | Description |
+|---------|-------------|
+| `/investigate` | Disciplined debugging methodology — structured intake, logging-first, 3-patch rule |
+
 ### Design & Planning
 
 | Command | Description |
 |---------|-------------|
 | `/brainstorm` | Socratic design refinement before implementation |
+
+### Agents
+
+| Agent | Description |
+|-------|-------------|
+| `plan-reviewer` | Validates implementation plans against the codebase (read-only, returns structured review) |
 
 ## Workflow Principles
 
@@ -158,11 +170,15 @@ See `docs/LEARNING-EXTRACTION-DESIGN.md` for the full system design.
 ## Project Structure
 
 ```
+agents/
+  plan-reviewer.md    # Plan validation agent
 skills/
   create-feature/     # /create-feature workflow
   create-bug/         # /create-bug workflow
   work-ticket/        # /work-ticket resume logic
   brainstorming/      # /brainstorm design sessions
+  investigate/        # /investigate debugging methodology
+  css-architecture/   # CSS token system and semantic styling
   create-tickets/     # Epic/task generation
   using-powers/       # Session start context
   tk-list/            # Ticket listing

@@ -43,3 +43,4 @@ Verify `tk` is installed. If unavailable, stop and tell the user to install it.
 - YAGNI ruthlessly
 - Explore alternatives before settling
 - Incremental validation
+- If the work involves CSS, styling, theming, or web UX, invoke `powers:css-architecture` for conventions

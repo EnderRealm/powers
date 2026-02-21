@@ -23,7 +23,18 @@ Record the ticket ID for later phases.
 
 ## Phase 2: Investigate
 
-Find the root cause.
+Find the root cause. For standalone debugging without the full bug workflow, use `/investigate`.
+
+**Intake — ask three structured questions** (single AskUserQuestion call):
+
+1. **Repro status** — "Can you reproduce this reliably?"
+   - Options: "Yes, every time" / "Sometimes" / "Saw it once" / "Haven't tried yet"
+
+2. **Starting point** — "Where should we start looking?"
+   - Options: provide 2-3 specific locations from reading the code, plus "Somewhere else"
+
+3. **Additional context** — "Anything else relevant?"
+   - Options: "Error message/stack trace" / "Recent change triggered it" / "Environment-specific" / "Nothing else"
 
 **Reproduce the bug:**
 - Use Puppeteer for UX bugs (headless=false to observe)
@@ -42,9 +53,12 @@ tk add-note <ticket-id> "## Reproduction
 ```
 
 **Find root cause:**
+- Add logging first, never speculate — observe actual behavior before forming hypotheses
 - Trace the code path
 - Identify the faulty logic
 - Understand why it happens
+- If the bug involves CSS, styling, or theming, invoke `powers:css-architecture` for conventions
+- **3-patch rule:** if you've tried 3 patches and the bug persists, your mental model is wrong — stop, re-examine assumptions, and re-engage with the user
 
 ## Phase 3: Fix
 

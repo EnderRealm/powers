@@ -27,6 +27,7 @@ Understand the feature before creating a ticket.
 - If >2 hours of work, propose: "This is epic-sized. Break into child tickets?"
 - If yes, use `powers:create-tickets` to generate epic + children, then stop
 - If no, continue with single feature
+- If the work involves CSS, styling, theming, or web UX, invoke `powers:css-architecture` for conventions
 
 **Output:** Clear understanding of problem, solution, success criteria, constraints.
 
@@ -66,6 +67,28 @@ tk add-note <ticket-id> "## Plan
 
 **Interactive mode:** Ask "Does this plan look right?" before proceeding.
 **Auto mode:** Document plan and continue.
+
+## Phase 3.5: Validate Plan
+
+Delegate to the `plan-reviewer` agent to verify the plan against the actual codebase.
+
+**Invoke:** Use the Task tool with `subagent_type: "plan-reviewer"`. Pass the plan from Phase 3 as the prompt.
+
+**Handle verdict:**
+- **READY** — proceed to Phase 4
+- **NEEDS REVISION** — revise plan based on review findings, then re-validate
+- **BLOCKED** — stop and surface to user with the reviewer's findings
+
+**Record review in ticket:**
+```bash
+tk add-note <ticket-id> "## Plan Review
+
+**Verdict:** <READY|NEEDS REVISION|BLOCKED>
+
+<summary of findings>
+
+<!-- checkpoint: plan-validated -->"
+```
 
 ## Phase 4: Execute
 
