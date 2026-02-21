@@ -8,6 +8,7 @@ DIR=$(echo "$input" | jq -r '.workspace.current_dir')
 
 # The "// 0" provides a fallback if the field is null
 PCT=$(echo "$input" | jq -r '.context_window.used_percentage // 0' | cut -d. -f1)
+DURATION_MS=$(echo "$input" | jq -r '.cost.total_duration_ms // 0' | cut -d. -f1)
 
 # Build progress bar: printf creates spaces, tr replaces with blocks
 BAR_WIDTH=10
