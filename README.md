@@ -44,14 +44,11 @@ Link the global Claude config files to use this repo's versions:
 mv ~/.claude/CLAUDE.md ~/.claude/CLAUDE.md.backup 2>/dev/null
 mv ~/.claude/settings.json ~/.claude/settings.json.backup 2>/dev/null
 
-
-
 # Create symlinks
 ln -s ~/code/powers/CLAUDE.global.md ~/.claude/CLAUDE.md
 ln -s ~/code/powers/settings.global.json ~/.claude/settings.json
 ln -s ~/code/powers/statusline.sh ~/.claude/statusline.sh
 chmod +x ~/.claude/statusline.sh
-
 ```
 
 This gives you:

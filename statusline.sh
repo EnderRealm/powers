@@ -55,18 +55,8 @@ if git rev-parse --git-dir > /dev/null 2>&1; then
     [ "$STAGED" -gt 0 ] && GIT_STATUS="${GREEN}+${STAGED}${RESET}"
     [ "$MODIFIED" -gt 0 ] && GIT_STATUS="${GIT_STATUS}${YELLOW}~${MODIFIED}${RESET}"
 
-    # Convert git SSH URL to HTTPS
-    REMOTE=$(git remote get-url origin 2>/dev/null | sed 's/git@github.com:/https:\/\/github.com\//' | sed 's/\.git$//')
-
-    if [ -n "$REMOTE" ]; then
-        REPO_NAME=$(basename "$REMOTE")
-        # OSC 8 format: \e]8;;URL\a then TEXT then \e]8;;\a
-        # printf %b interprets escape sequences reliably across shells
-        printf '%b' "[$MODEL] $BAR $PCT% | ⏱️ ${MINS}m ${SECS}s | 📁 ${DIR##*/} | 🌿 $BRANCH $GIT_STATUS | 🔗 \e]8;;${REMOTE}\a${REPO_NAME}\e]8;;\a\n"
-    else
-        # Output the status line - ${DIR##*/} extracts just the folder name
-        echo "[$MODEL] $BAR $PCT% | ⏱️ ${MINS}m ${SECS}s | 📁 ${DIR##*/} | 🌿 $BRANCH $GIT_STATUS"
-    fi
+    REPO_SLUG=$(git remote get-url origin 2>/dev/null | sed 's/.*github\.com[:/]//' | sed 's/\.git$//')
+    printf '%b' "[$MODEL] $BAR $PCT% | ⏱️ ${MINS}m ${SECS}s | 📁 ${DIR##*/} | 🌿 $BRANCH $GIT_STATUS${REPO_SLUG:+ | 🔗 $REPO_SLUG}\n"
 else
     # Output the status line - ${DIR##*/} extracts just the folder name
     echo "[$MODEL] $BAR $PCT%  | ⏱️ ${MINS}m ${SECS}s | 📁 ${DIR##*/}"
