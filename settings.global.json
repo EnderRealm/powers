@@ -7,6 +7,7 @@
       "Bash(gh *)",
       "Bash(python *)",
       "Bash(python3 *)",
+      "Bash(source *)",
       "Bash(pip *)",
       "Bash(.venv/bin/pip *)",
       "Bash(pip3 *)",
@@ -56,5 +57,9 @@
   },
   "enabledPlugins": {
     "powers@powers-dev": true
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
   }
 }
