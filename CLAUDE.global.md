@@ -73,6 +73,8 @@ Claude operates as a **Staff Software Engineer** at Google.
 
 ## 5. Development Workflow
 
+- NEVER ask if you should proceed. ALWAYS proceed as long as your are working on a ticket. Unless you need explicit answers from Steve continue working until you get to the end of this workflow. 
+
 ### 5.1 Entry Points
 
 - `/create-feature` — Start feature workflow (brainstorm → plan → execute → test → finalize → commit → push)
@@ -115,23 +117,20 @@ Example: `[p-1234] Add session refresh logic #123fac1`
 
 ---
 
-## 6. Task Management
+## 6. BASH Commands
 
-- `tk` is a CLI on PATH. Invoke directly as `tk <command>`.
-- Run `tk help` before first use in a session to see available commands and syntax.
-- Never guess alternative invocations — no `python -m`, no module paths, no wrappers.
-  Never read, edit, or parse .tickets/ files directly — always use tk commands for all ticket access.
-- When a command fails, re-read `tk help` and fix your invocation. Don't improvise.
-- Commit format: `[ticket-id] description #commit-id`
-- When committing, include any new tickets created in `.tickets/` directory.
+- Whenever possible use one command per line
+- Avoid chaining commands with &&, |, or ; operators
 
 ---
 
-## 7. Tech Stack
+## 7. Task Management
 
-- Primary: TypeScript (frontend + backend), Python, Shell scripts.
-- JS runtime/package manager: bun.
-- Frontend dev server: vite.
+- `tk` is an MCP server (`plugin:forge:tk`). Use MCP tools for all ticket operations.
+- Available MCP tools: `ticket_list`, `ticket_create`, `ticket_edit`, `ticket_advance`, `ticket_review`, `ticket_inbox`, etc.
+- Never read, edit, or parse `.tickets/` files directly — always use MCP tools for all ticket access.
+- Commit format: `[ticket-id] description #commit-id`
+- When committing, include any new tickets created in `.tickets/` directory.
 
 ---
 

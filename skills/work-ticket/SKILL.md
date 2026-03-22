@@ -1,12 +1,12 @@
 ---
 name: work-ticket
-description: Resume work on an existing ticket based on its type and current state.
+description: Work on an existing ticket based on its type and current state.
 argument-hint: <ticket-id> [--auto]
 ---
 
-# Resume Ticket Work
+# Work a Ticket
 
-Resume work on an existing ticket, picking up where you left off.
+Work on an existing ticket, picking up where you left off if this ticket is in-progress.
 
 **Input:** `$ARGUMENTS` should contain ticket ID and optional `--auto` flag.
 
